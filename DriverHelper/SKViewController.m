@@ -9,26 +9,27 @@
 #import "SKViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface SKViewController ()
+@interface SKViewController () <GMSMapViewDelegate>
 
 @end
 
 @implementation SKViewController
+- (void)setUpMap
+{
+    //self.google = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+	self.google.myLocationEnabled = YES;
+	self.google.settings.myLocationButton = YES;
+	self.google.settings.compassButton = YES;
+}
+
 - (void)viewDidLoad
 {
-	GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86 longitude:151.20 zoom:6];
+	//GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86 longitude:151.20 zoom:6];
 	
-    self.google = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    self.google.myLocationEnabled = YES;
-    //self.view = self.google;
+	[self setUpMap];
+
 	
-    // create a marker in the center of the map
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(-33.86, 151.20);
-    marker.title = @"Sydney";
-    marker.snippet=@"Austrailia";
-    marker.map = self.google;
-    [super viewDidLoad];
+        [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
