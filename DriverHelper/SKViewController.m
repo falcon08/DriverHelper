@@ -27,6 +27,18 @@
 	//GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86 longitude:151.20 zoom:6];
 	
 	[self setUpMap];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:47.248552
+                                                            longitude:39.702460
+                                                                 zoom:15];
+    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(47.248552, 39.702460);
+    marker.appearAnimation = kGMSMarkerAnimationPop;
+    marker.icon = [UIImage imageNamed:@"flag_icon"];
+    marker.map = mapView;
+    
+    self.view = mapView;
 
 	
         [super viewDidLoad];
