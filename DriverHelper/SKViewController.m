@@ -20,6 +20,7 @@
 	self.google.myLocationEnabled = YES;
 	self.google.settings.myLocationButton = YES;
 	self.google.settings.compassButton = YES;
+	self.google.delegate =self;
 }
 
 - (void)viewDidLoad
@@ -27,24 +28,28 @@
 	//GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86 longitude:151.20 zoom:6];
 	
 	[self setUpMap];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:47.248552
-                                                            longitude:39.702460
-                                                                 zoom:15];
-    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    //GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:47.248552
+      //                                                      longitude:39.702460
+        //                                                         zoom:15];
+    //GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
-    GMSMarker *marker = [[GMSMarker alloc] init];
+    /*GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(47.248552, 39.702460);
     marker.appearAnimation = kGMSMarkerAnimationPop;
     marker.icon = [UIImage imageNamed:@"flag_icon"];
-    marker.map = mapView;
-    
-    self.view = mapView;
+    marker.map = self.google;
+    */
 
 	
         [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
-
+- (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
+	CLLocationCoordinate2D position = coordinate;
+	GMSMarker *marker = [GMSMarker markerWithPosition:position];
+	marker.title = @"Дарова чувак";
+	marker.map = self.google;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
