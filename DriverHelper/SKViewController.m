@@ -45,11 +45,28 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 - (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
-	CLLocationCoordinate2D position = coordinate;
-	GMSMarker *marker = [GMSMarker markerWithPosition:position];
-	marker.title = @"Дарова чувак";
-	marker.map = self.google;
+	BOOL isExist = false;
+	for (GMSMarker *existMarker in self.markers) {
+		if(existMarker.position.latitude == coordinate.latitude && existMarker.position.longitude == coordinate.longitude)
+		{
+			existMarker.map = nil;
+			isExist = true;
+		}
+	}
+	if(isExist ==false)
+	{
+		CLLocationCoordinate2D position = coordinate;
+		GMSMarker *marker = [GMSMarker markerWithPosition:position];
+		marker.title = @"Дарова чувак";
+		marker.map = self.google;
+		[self.markers addObject:marker];
+	}
 }
+-(void) mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker
+{
+	NSLog(@"");
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

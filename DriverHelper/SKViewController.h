@@ -11,5 +11,6 @@
 
 @interface SKViewController : UIViewController
 @property (weak, nonatomic) IBOutlet GMSMapView *google;
+@property (nonatomic,weak) NSMutableArray *markers;
 
 @end
