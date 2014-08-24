@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "MarkerInfoWindowViewController.h"
 
 @interface SKViewController : UIViewController
 @property (weak, nonatomic) IBOutlet GMSMapView *google;
 @property (nonatomic,weak) NSMutableArray *markers;
+@property (nonatomic,weak) MarkerInfoWindowViewController *infoWindow;
 
 @end

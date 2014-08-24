@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		532C4ED019A8B9BF00E03066 /* MarkerInfoWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 532C4ECE19A8B9BF00E03066 /* MarkerInfoWindowViewController.m */; };
+		532C4ED119A8B9BF00E03066 /* MarkerInfoWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532C4ECF19A8B9BF00E03066 /* MarkerInfoWindowViewController.xib */; };
+		532C4ED419A8C19E00E03066 /* MarkerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 532C4ED319A8C19E00E03066 /* MarkerInfo.m */; };
 		53C857FC199D1D1F0027ECEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C857FB199D1D1F0027ECEF /* Foundation.framework */; };
 		53C857FE199D1D1F0027ECEF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C857FD199D1D1F0027ECEF /* CoreGraphics.framework */; };
 		53C85800199D1D1F0027ECEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C857FF199D1D1F0027ECEF /* UIKit.framework */; };
@@ -48,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		532C4ECD19A8B9BF00E03066 /* MarkerInfoWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkerInfoWindowViewController.h; sourceTree = "<group>"; };
+		532C4ECE19A8B9BF00E03066 /* MarkerInfoWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkerInfoWindowViewController.m; sourceTree = "<group>"; };
+		532C4ECF19A8B9BF00E03066 /* MarkerInfoWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoWindowViewController.xib; sourceTree = "<group>"; };
+		532C4ED219A8C19E00E03066 /* MarkerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkerInfo.h; sourceTree = "<group>"; };
+		532C4ED319A8C19E00E03066 /* MarkerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkerInfo.m; sourceTree = "<group>"; };
 		53C857F8199D1D1F0027ECEF /* DriverHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C857FB199D1D1F0027ECEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53C857FD199D1D1F0027ECEF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +182,11 @@
 				53C85811199D1D1F0027ECEF /* SKViewController.m */,
 				53C85813199D1D1F0027ECEF /* Images.xcassets */,
 				53C85802199D1D1F0027ECEF /* Supporting Files */,
+				532C4ECD19A8B9BF00E03066 /* MarkerInfoWindowViewController.h */,
+				532C4ECE19A8B9BF00E03066 /* MarkerInfoWindowViewController.m */,
+				532C4ECF19A8B9BF00E03066 /* MarkerInfoWindowViewController.xib */,
+				532C4ED219A8C19E00E03066 /* MarkerInfo.h */,
+				532C4ED319A8C19E00E03066 /* MarkerInfo.m */,
 			);
 			path = DriverHelper;
 			sourceTree = "<group>";
@@ -289,6 +302,7 @@
 			files = (
 				53C85814199D1D1F0027ECEF /* Images.xcassets in Resources */,
 				53C85806199D1D1F0027ECEF /* InfoPlist.strings in Resources */,
+				532C4ED119A8B9BF00E03066 /* MarkerInfoWindowViewController.xib in Resources */,
 				53C8580F199D1D1F0027ECEF /* Main.storyboard in Resources */,
 				53C85833199D20EF0027ECEF /* GoogleMaps.bundle in Resources */,
 			);
@@ -309,7 +323,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				532C4ED019A8B9BF00E03066 /* MarkerInfoWindowViewController.m in Sources */,
 				53C8580C199D1D1F0027ECEF /* SKAppDelegate.m in Sources */,
+				532C4ED419A8C19E00E03066 /* MarkerInfo.m in Sources */,
 				53C85812199D1D1F0027ECEF /* SKViewController.m in Sources */,
 				53C85808199D1D1F0027ECEF /* main.m in Sources */,
 			);

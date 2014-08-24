@@ -8,6 +8,7 @@
 
 #import "SKViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "MarkerInfoWindowViewController.h"
 
 @interface SKViewController () <GMSMapViewDelegate>
 
@@ -26,27 +27,18 @@
 - (void)viewDidLoad
 {
 	//GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86 longitude:151.20 zoom:6];
-	
+	 [super viewDidLoad];
 	[self setUpMap];
-    //GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:47.248552
-      //                                                      longitude:39.702460
-        //                                                         zoom:15];
-    //GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    
-    /*GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(47.248552, 39.702460);
-    marker.appearAnimation = kGMSMarkerAnimationPop;
-    marker.icon = [UIImage imageNamed:@"flag_icon"];
-    marker.map = self.google;
-    */
+	
 
 	
-        [super viewDidLoad];
+	
 	// Do any additional setup after loading the view, typically from a nib.
 }
 - (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
 	BOOL isExist = false;
 	for (GMSMarker *existMarker in self.markers) {
+		
 		if(existMarker.position.latitude == coordinate.latitude && existMarker.position.longitude == coordinate.longitude)
 		{
 			existMarker.map = nil;
@@ -57,14 +49,21 @@
 	{
 		CLLocationCoordinate2D position = coordinate;
 		GMSMarker *marker = [GMSMarker markerWithPosition:position];
-		marker.title = @"Дарова чувак";
+		marker.title = @"Hello";
 		marker.map = self.google;
 		[self.markers addObject:marker];
 	}
 }
+
+/*-(UIView *)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker
+{
+	
+}*/
+
 -(void) mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker
 {
-	NSLog(@"");
+	self.infoWindow = [[[NSBundle mainBundle] loadNibNamed:@"MarkerInfoWindowViewController" owner:self options:nil] lastObject];
+
 }
 
 - (void)didReceiveMemoryWarning
