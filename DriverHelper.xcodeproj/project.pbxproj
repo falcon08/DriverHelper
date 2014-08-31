@@ -10,6 +10,8 @@
 		532C4ED019A8B9BF00E03066 /* MarkerInfoWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 532C4ECE19A8B9BF00E03066 /* MarkerInfoWindowViewController.m */; };
 		532C4ED119A8B9BF00E03066 /* MarkerInfoWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532C4ECF19A8B9BF00E03066 /* MarkerInfoWindowViewController.xib */; };
 		532C4ED419A8C19E00E03066 /* MarkerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 532C4ED319A8C19E00E03066 /* MarkerInfo.m */; };
+		53938BC619B2745000E51D0D /* SideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53938BC419B2745000E51D0D /* SideBarViewController.m */; };
+		53938BC719B2745000E51D0D /* SideBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53938BC519B2745000E51D0D /* SideBarViewController.xib */; };
 		53C857FC199D1D1F0027ECEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C857FB199D1D1F0027ECEF /* Foundation.framework */; };
 		53C857FE199D1D1F0027ECEF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C857FD199D1D1F0027ECEF /* CoreGraphics.framework */; };
 		53C85800199D1D1F0027ECEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C857FF199D1D1F0027ECEF /* UIKit.framework */; };
@@ -56,6 +58,9 @@
 		532C4ECF19A8B9BF00E03066 /* MarkerInfoWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoWindowViewController.xib; sourceTree = "<group>"; };
 		532C4ED219A8C19E00E03066 /* MarkerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkerInfo.h; sourceTree = "<group>"; };
 		532C4ED319A8C19E00E03066 /* MarkerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkerInfo.m; sourceTree = "<group>"; };
+		53938BC319B2745000E51D0D /* SideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideBarViewController.h; path = ../SideBarViewController.h; sourceTree = "<group>"; };
+		53938BC419B2745000E51D0D /* SideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideBarViewController.m; path = ../SideBarViewController.m; sourceTree = "<group>"; };
+		53938BC519B2745000E51D0D /* SideBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SideBarViewController.xib; path = ../SideBarViewController.xib; sourceTree = "<group>"; };
 		53C857F8199D1D1F0027ECEF /* DriverHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C857FB199D1D1F0027ECEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53C857FD199D1D1F0027ECEF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -175,6 +180,9 @@
 		53C85801199D1D1F0027ECEF /* DriverHelper */ = {
 			isa = PBXGroup;
 			children = (
+				53938BC319B2745000E51D0D /* SideBarViewController.h */,
+				53938BC419B2745000E51D0D /* SideBarViewController.m */,
+				53938BC519B2745000E51D0D /* SideBarViewController.xib */,
 				53C8580A199D1D1F0027ECEF /* SKAppDelegate.h */,
 				53C8580B199D1D1F0027ECEF /* SKAppDelegate.m */,
 				53C8580D199D1D1F0027ECEF /* Main.storyboard */,
@@ -301,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53C85814199D1D1F0027ECEF /* Images.xcassets in Resources */,
+				53938BC719B2745000E51D0D /* SideBarViewController.xib in Resources */,
 				53C85806199D1D1F0027ECEF /* InfoPlist.strings in Resources */,
 				532C4ED119A8B9BF00E03066 /* MarkerInfoWindowViewController.xib in Resources */,
 				53C8580F199D1D1F0027ECEF /* Main.storyboard in Resources */,
@@ -326,6 +335,7 @@
 				532C4ED019A8B9BF00E03066 /* MarkerInfoWindowViewController.m in Sources */,
 				53C8580C199D1D1F0027ECEF /* SKAppDelegate.m in Sources */,
 				532C4ED419A8C19E00E03066 /* MarkerInfo.m in Sources */,
+				53938BC619B2745000E51D0D /* SideBarViewController.m in Sources */,
 				53C85812199D1D1F0027ECEF /* SKViewController.m in Sources */,
 				53C85808199D1D1F0027ECEF /* main.m in Sources */,
 			);
@@ -453,6 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -462,6 +473,7 @@
 				INFOPLIST_FILE = "DriverHelper/DriverHelper-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -472,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -481,6 +494,7 @@
 				INFOPLIST_FILE = "DriverHelper/DriverHelper-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

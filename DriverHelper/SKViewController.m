@@ -15,9 +15,22 @@
 @end
 
 @implementation SKViewController
+- (void)startLocationUpdate
+{
+	self.locationManager = [[CLLocationManager alloc] init];
+	self.locationManager.delegate = self;
+	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+	// Set a movement threshold for new events.
+	self.locationManager.distanceFilter = 100; // meters
+	[self.locationManager startUpdatingLocation];
+}
+
 - (void)setUpMap
 {
     //self.google = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+	GMSCameraUpdate *zoomCamera = [GMSCameraUpdate zoomTo:16];
+	[self startLocationUpdate];
+	[self.google moveCamera:zoomCamera];
 	self.google.myLocationEnabled = YES;
 	self.google.settings.myLocationButton = YES;
 	self.google.settings.compassButton = YES;
@@ -26,14 +39,12 @@
 
 - (void)viewDidLoad
 {
-	//GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86 longitude:151.20 zoom:6];
-	 [super viewDidLoad];
+	[super viewDidLoad];
 	[self setUpMap];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
 	
-
-	
-	
-	// Do any additional setup after loading the view, typically from a nib.
 }
 - (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
 	BOOL isExist = false;
@@ -49,16 +60,24 @@
 	{
 		CLLocationCoordinate2D position = coordinate;
 		GMSMarker *marker = [GMSMarker markerWithPosition:position];
-		marker.title = @"Hello";
+		marker.title = @"Нажмите сюда, чтобы ";
 		marker.map = self.google;
 		[self.markers addObject:marker];
 	}
 }
-
-/*-(UIView *)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-	
-}*/
+	CLLocation* location = [locations lastObject];
+	NSDate* eventDate = location.timestamp;
+	NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+	if (abs(howRecent) < 15.0) {
+		self.latitude = location.coordinate.latitude;
+		self.longitude = location.coordinate.longitude;
+	}
+	[self.google animateToLocation:CLLocationCoordinate2DMake(self.latitude, self.longitude)];
+
+}
+
 
 -(void) mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker
 {

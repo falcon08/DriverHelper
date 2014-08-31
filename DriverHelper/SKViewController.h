@@ -10,8 +10,11 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "MarkerInfoWindowViewController.h"
 
-@interface SKViewController : UIViewController
+@interface SKViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet GMSMapView *google;
+@property (nonatomic)CLLocationManager *locationManager;
+@property(nonatomic) double latitude;
+@property(nonatomic) double longitude;
 @property (nonatomic,weak) NSMutableArray *markers;
 @property (nonatomic,weak) MarkerInfoWindowViewController *infoWindow;
 
