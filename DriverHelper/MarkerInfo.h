@@ -15,7 +15,10 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *type;
 @property (nonatomic) NSString *description;
-@property (nonatomic) CLLocationCoordinate2D *coordinates;
+@property (nonatomic) CLLocationCoordinate2D coordinates;
+@property (nonatomic) NSDictionary *commentsArray;
+@property (nonatomic) NSInteger ratio;
+
 
 
 @end

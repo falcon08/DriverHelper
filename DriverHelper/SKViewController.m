@@ -20,14 +20,12 @@
 	self.locationManager = [[CLLocationManager alloc] init];
 	self.locationManager.delegate = self;
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-	// Set a movement threshold for new events.
 	self.locationManager.distanceFilter = 100; // meters
 	[self.locationManager startUpdatingLocation];
 }
 
 - (void)setUpMap
 {
-    //self.google = [GMSMapView mapWithFrame:CGRectZero camera:camera];
 	GMSCameraUpdate *zoomCamera = [GMSCameraUpdate zoomTo:16];
 	[self startLocationUpdate];
 	[self.google moveCamera:zoomCamera];

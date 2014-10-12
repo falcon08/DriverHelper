@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MarkerInfo.h"
 
 @interface MarkerInfoWindowViewController : UIViewController
+@property (nonatomic) MarkerInfo *markerInfo;
 @end
